@@ -1,0 +1,254 @@
+/* Importing Google Font 'Poppins' for the application */
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+/* Universal styles applied to all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body background color */
+body {
+  background-color: #151515;
+}
+
+/* Hide the scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Logo styles */
+.app-title {
+  background-color: red;
+  color: white;
+  display: inline-flex;
+  padding: 10px;
+  margin-left: 150px;
+  margin-top: 50px;
+}
+
+/* Search bar container styles */
+.search {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Search input and button styles */
+.search input,
+.search button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  border: 2px solid rgba(255, 0, 0, 0.6);
+}
+
+/* Button hover and active states */
+.search button {
+  cursor: pointer;
+}
+.search button:hover {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+.search button:active {
+  transform: scale(0.9);
+}
+
+/* Movies Section styles */
+.movies-container {
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.movies-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Card styles for movie posters */
+.card {
+  width: clamp(150px, 95vw, 250px);
+  box-shadow: 0 0 0.5rem rgba(255, 0, 0, 1);
+  overflow: hidden;
+  color: white;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+/* Image transition effect */
+.img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  transition: 200ms ease-in-out transform;
+}
+
+.card:hover .img {
+  transform: scale(1.1);
+}
+
+/* Image settings inside the card */
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Information section inside each movie card */
+.info {
+  padding: 2rem 1rem 1rem;
+}
+
+.info h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.single-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.2rem 0;
+  font-size: 0.8rem;
+}
+
+/* Popup Container styles */
+.popup-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 3rem;
+  overflow-y: scroll;
+  transform: scale(0);
+  transition: transform 200ms ease ease-in-out;
+}
+
+/* Show popup with transition */
+.show-popup {
+  transform: scale(1);
+}
+
+/* Change color class for elements */
+.change-color {
+  color: red;
+}
+
+/* Content container inside the popup */
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  width: 1200px;
+  margin-top: 10rem;
+}
+
+/* Styling for the left section inside the popup */
+.content .left .single-info {
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.content .left .single-info .heart-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.content .left .single-info .heart-icon:hover {
+  transform: scale(1.1);
+}
+
+.content .left .single-info .heart-icon:active {
+  transform: scale(0.9);
+}
+
+/* Poster image inside the popup */
+.poster-img {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(255, 0, 0, 1);
+  border: 1px solid rgba(255, 0, 0, 1);
+}
+
+.poster-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Single information container styles */
+.single-info-container {
+  width: 200px;
+}
+
+/* Right section of the content inside the popup */
+.right > *:not(h1) {
+  margin: 1rem 0;
+}
+
+/* Trailer iframe settings */
+.trailer {
+  width: 400px;
+  height: 250px;
+}
+
+.trailer iframe {
+  border: 2px solid rgba(255, 0, 0, 1);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 1);
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 250px;
+}
+
+/* Close icon styles for the popup */
+.x-icon {
+  font-size: 2rem;
+  position: absolute;
+  right: 100px;
+  top: 100px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.x-icon:hover {
+  transform: scale(1.3);
+}
+
+.x-icon:active {
+  transform: scale(1);
+}
+
+/* Media Query for smaller screens (max-width: 800px) */
+@media only screen and (max-width: 800px) {
+  .content {
+    flex-direction: column;
+    margin-top: 50rem;
+  }
+
+  /* Adjust position of the close icon on small screens */
+  .x-icon {
+    top: 10px;
+    right: 20px;
+  }
+}
